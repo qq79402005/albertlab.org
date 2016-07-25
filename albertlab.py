@@ -1,8 +1,12 @@
 import os
 import sys
+import hashlib
 from django.conf import settings
 
-# django settings
+# 获取当前文件所在目录
+BASE_DIR = os.path.dirname(__file__)
+
+# 配置
 settings.configure(
     DEBUG=True,
     SECRET_KEY='thisisthesecretkey',
@@ -12,6 +16,16 @@ settings.configure(
         'django.middleware.csrf.CsrfViewMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
     ),
+    INSTALLED_APPS=(
+        'django.contrib.staticfiles'
+    ),
+    TEMPLATE_DIRS=(
+        os.path.join(BASE_DIR, 'templates'),
+    ),
+    STATICFILES_DIRS=(
+        os.path.join(BASE_DIR, 'static'),
+    ),
+    STATIC_URL='/static/'
 )
 
 from django import forms

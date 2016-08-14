@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color:#DDDDDD;
+  background-color:rgb(235, 235, 235);
 }
 
 .field {
@@ -39,4 +39,8 @@ body {
 .field>button {
   padding:0.6em 0.8em;
   background-color:rgb(26, 188, 156);
+}
+
+ul li {
+   line-height:28px;
 }
